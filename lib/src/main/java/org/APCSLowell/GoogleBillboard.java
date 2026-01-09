@@ -5,11 +5,19 @@ package org.APCSLowell;
 
 public class GoogleBillboard {
     public boolean isPrime(long n) {
-        // Copy and paste your answer from CodingBat appropriatley here.
-        return false;
+        boolean prime = num > 1;
+        for(int i = 2; i<= Math.sqrt(num); i++) if(num%i==0) prime = false;
+        return prime;
     }
     public long firstPrimeNumberIn(String n) {
-        // Write your code here.
+        for(int i = 0; i<n.length(); i++)
+        {
+            boolean prime = isPrime(Double.parseDouble(n.substring(i,i+10)));
+            if(prime)
+            {
+                return i;
+            }   
+        }
         return -1;
     }
 }

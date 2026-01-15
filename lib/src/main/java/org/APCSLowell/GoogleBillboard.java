@@ -5,17 +5,17 @@ package org.APCSLowell;
 
 public class GoogleBillboard {
     public boolean isPrime(long n) {
-        boolean prime = num > 1;
-        for(int i = 2; i<= Math.sqrt(num); i++) if(num%i==0) prime = false;
+        boolean prime = n > 1;
+        for(int i = 2; i<= Math.sqrt(n); i++) if(n%i==0) prime = false;
         return prime;
     }
     public long firstPrimeNumberIn(String n) {
         for(int i = 0; i<n.length(); i++)
         {
-            boolean prime = isPrime(Double.parseDouble(n.substring(i,i+10)));
+            boolean prime = isPrime(Long.parseLong(n.substring(i,i+10)));
             if(prime)
             {
-                return i;
+                return Long.parseLong(n.substring(i,i+10));
             }   
         }
         return -1;
